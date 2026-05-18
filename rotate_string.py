@@ -15,7 +15,6 @@ class Solution:
                 s = string
             j += 1
         return False
-    
 # i found that the best solution in this case is those two simple lines
 #class Solution:
     # def rotateString(self, s: str, goal: str) -> bool:
