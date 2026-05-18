@@ -1,11 +1,12 @@
+from __future__ import annotations
 import heapq
 from typing import List
+from collections import defaultdict
 
 
 class Solution:
-    def minJumps(self, arr: List[int]) -> int:
-        count = 0
-        q = (count, 0, arr[0])
+    def minJumps(self: Solution, arr: List[int]) -> int:
+        q = [(0, 0, arr[0])]
         heapq.heapify(q)
         visited = set()
         while q:
@@ -15,17 +16,22 @@ class Solution:
             if (idx, element) in visited:
                 continue
             visited.add((idx, element))
-            
             if idx + 1 < len(arr):
-                q.append((idx + 1, arr[idx + 1], count + 1))
+                q.append((count + 1, idx + 1, arr[idx + 1]))
             if idx - 1 >= 0:
-                q.append((idx - 1, arr[idx - 1], count + 1))
-            if idx != 0 and arr[idx] in arr[:idx]:
-                j_idx = arr.index(arr[idx], 0, idx)
-                q.append((j_idx, arr[j_idx], count + 1))
-            if idx + 1 < len(arr) and arr[idx] in arr[idx + 1:]:
-                j_idx = arr.index(arr[idx], idx + 1, len(arr) - 1)
-                q.append((j_idx, arr[j_idx], count + 1))
-arr = [100,-23,-23,404,100,23,23,23,3,404]
+                q.append((count + 1, idx - 1, arr[idx - 1]))
+            j = idx       
+            while arr[j] in arr[j + 1:]:
+                j = arr.index(arr[j], j + 1, len(arr))
+                heapq.heappush(q, (count + 1, j, arr[j]))   
+        return 0
+
+arr = [25,-28,-51,61,-74,-51,-30,58,36,68,-80,-64,25,-30,-53,36,-74,61,-100,-30,-52]
 
 print(Solution().minJumps(arr))
+x = int()
+print(x)
+tags = defaultdict(set)
+tags["python"].add("language")
+tags["python"].add("language")  # duplicate ignored
+print(tags["python"])
