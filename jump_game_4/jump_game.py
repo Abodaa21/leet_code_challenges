@@ -1,13 +1,15 @@
+import heapq
 from typing import List
 
 
 class Solution:
     def minJumps(self, arr: List[int]) -> int:
         count = 0
-        q = [(0, arr[0], count)]
+        q = (count, 0, arr[0])
+        heapq.heapify(q)
         visited = set()
         while q:
-            idx, element, count = q.pop()
+            count, idx, element = heapq.heappop(q)
             if (idx, element) == (len(arr) - 1, arr[len(arr) - 1]):
                 return count
             if (idx, element) in visited:
