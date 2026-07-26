@@ -1,3 +1,6 @@
+from typing import List
+
+
 class Solution:
     def isMonotonic(self, nums: List[int]) -> bool:
         if len(nums) == 0:
@@ -19,5 +22,5 @@ class Solution:
             previous = n
         return True
 
-print(Solution().isMonotonic([1,2,2,3]))
+
                 

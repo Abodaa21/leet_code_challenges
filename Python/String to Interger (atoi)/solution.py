@@ -1,5 +1,5 @@
 class Solution:
-    def myAtoi(self, s: str) -> int:
+    def myAtoi(self: "Solution", s: str) -> int:
         sign = 1
         if len(s) == 0:
             return 0
@@ -27,5 +27,3 @@ class Solution:
         if number > 2147483648 and sign == -1:
             return -2147483648
         return (number * sign)
-
-print(Solution().myAtoi("21474836460"))
