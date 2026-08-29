@@ -13,4 +13,3 @@ class Solution:
             elif moves[i] == '_':
                 idx += 1
         return (abs(count_l - count_r) + idx)
-
