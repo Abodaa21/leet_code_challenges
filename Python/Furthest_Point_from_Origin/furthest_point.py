@@ -1,5 +1,5 @@
 class Solution:
-    def furthestDistanceFromOrigin(self, moves: str) -> int:
+    def furthestDistanceFromOrigin(self: "Solution", moves: str) -> int:
         count_l = 0
         count_r = 0
         idx = 0
@@ -14,4 +14,3 @@ class Solution:
                 idx += 1
         return (abs(count_l - count_r) + idx)
 
-print(Solution().furthestDistanceFromOrigin("_R__LL_"))

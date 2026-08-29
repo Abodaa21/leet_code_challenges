@@ -2,7 +2,7 @@ from typing import List
 
 
 class Solution:
-    def findUnsortedSubarray(self, nums):
+    def findUnsortedSubarray(self: "Solution", nums: List) -> int:
         n = len(nums)
         max_seen = float('-inf')
         end = -1
@@ -21,4 +21,3 @@ class Solution:
             min_seen = min(min_seen, nums[i])
 
         return end - start + 1 if end != -1 else 0
-print(Solution().findUnsortedSubarray([2, 1, 4, 2, 5]))

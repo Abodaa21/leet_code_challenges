@@ -1,5 +1,5 @@
 class Solution:
-    def romanToInt(self, s: str) -> int:
+    def romanToInt(self: "Solution", s: str) -> int:
         pre_value = 0
         total = 0
         roman_dict = {
@@ -19,6 +19,3 @@ class Solution:
                 total += value
             pre_value = value
         return total
-
-
-print(Solution().romanToInt("MCMXCIV"))

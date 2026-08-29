@@ -26,11 +26,3 @@ int rob(int* nums, int numsSize) {
     }
     return fmax(fmax(previous1, previous2), previous3);
 }
-
-
-int main(int argc, char* argv[]){
-    int arr[] = {1,2};
-
-    printf("%d",rob(arr, 4));
-
-}

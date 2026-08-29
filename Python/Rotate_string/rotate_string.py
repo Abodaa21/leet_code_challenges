@@ -1,5 +1,5 @@
 class Solution:
-    def rotateString(self, s: str, goal: str) -> bool:
+    def rotateString(self: "Solution", s: str, goal: str) -> bool:
         j = 0
         if len(s) != len(goal):
             return False
@@ -15,8 +15,3 @@ class Solution:
                 s = string
             j += 1
         return False
-# i found that the best solution in this case is those two simple lines
-#class Solution:
-    # def rotateString(self, s: str, goal: str) -> bool:
-   #     return len(s)==len(goal) and goal in (s+s)
-# and when i try to irrotate the best thing is to do s[1:] + s[0] instead my loop

@@ -4,3 +4,4 @@ test1.c
 a.exe
 test.exe
 ./../a.exe
+./../test.c
